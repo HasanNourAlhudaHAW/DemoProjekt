@@ -3,6 +3,7 @@ package io.cucumber.pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import qa.factory.DriverFactory;
 
 public class WishListPage {
     private WebDriver driver;
@@ -49,13 +50,13 @@ public class WishListPage {
 
     public WebElement getWishListLink()
     {
-        return driver.findElement(By.linkText("Wishlist"));
+        return DriverFactory.getDriver().findElement(By.linkText("Wishlist"));
     }
 
 
     public WebElement selectGiftCardToRemove()
     {
-        return driver.findElement(By.xpath("//input[@type=\"checkbox\"][@name=\"removefromcart\"]"));
+        return driver.findElement(By.xpath("//input[@name= 'removefromcart']"));
     }
 
     public WebElement getUpdateWishlistButton()

@@ -32,7 +32,7 @@ public class WishListPageSteps {
     }
     @Then("user should receive the message The product has been added to your wishlist")
     public void user_should_receive_the_message_the_product_has_been_added_to_your_wishlist() {
-        Assert.assertTrue(wishListPage.checkAddingSelectedCard().isDisplayed());
+        Assert.assertTrue(wishListPage.checkAddingSelectedCard().isEnabled());
     }
     @When("user moves to wishList")
     public void user_moves_to_wish_list() {

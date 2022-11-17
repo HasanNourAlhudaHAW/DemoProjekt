@@ -1,4 +1,4 @@
-Feature: Account Page Feature
+Feature: Account Feature
 
   Background:
     Given User has already logged in to Application

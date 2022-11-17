@@ -3,11 +3,11 @@ package io.cucumber.pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import qa.factory.DriverFactory;
 
 public class LoginPage {
 
     private WebDriver driver;
-
 
 
     // Constructor of the page class:
@@ -37,31 +37,26 @@ public class LoginPage {
         return driver.findElement(By.linkText("Log out"));
     }
 
-    public AccountPage doLogin(String email, String password)
-    {
-        this.enterEmail().sendKeys(email);
-        this.enterPassword().sendKeys(password);
-        this.clickOnLogin().click();
-        return new AccountPage(driver);
-    }
 
     public WebElement checkUnsuccessfulLogin()
     {
        return driver.findElement(By.xpath("//li[contains(text(), 'No customer account found')]"));
     }
 
-    public AccountPage userIsAlreadyOnAccountPage() {
 
-        this.hasAlreadyLoggedIn();
-        return new AccountPage(driver);
-
-    }
-
-    public AccountPage isLogInLinkVisible()
+    public WebElement getLoginLink()
     {
-        driver.findElement(By.linkText("Log in")).isDisplayed();
-        return new AccountPage(driver);
+        return DriverFactory.getDriver().findElement(By.linkText("Log in"));
+
     }
+
+    public WebElement getShoppingCartLink()
+    {
+        return DriverFactory.getDriver().findElement(By.linkText("Shopping cart"));
+
+    }
+
+
 
 
 }

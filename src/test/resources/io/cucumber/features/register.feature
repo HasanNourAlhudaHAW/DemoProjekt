@@ -1,6 +1,6 @@
 Feature: Register Test
 
-  Scenario: User Registers Functionality Test
+  Scenario: Register User
     Given user navigates to demo shop site
     When  user clicks on register link
     And   user fills out first name field
@@ -15,7 +15,7 @@ Feature: Register Test
 
 
 
-  Scenario: User Registers With Invalid Inputs Functionality Test
+  Scenario: Register User With Invalid Email Format
     Given user navigates to demo shop site
     When  user clicks on register link
     And   user fills out first name field
@@ -23,3 +23,15 @@ Feature: Register Test
     And   user enters invalid email format
     And   user tries to enter password
     Then  user should get an error message: Wrong email
+
+
+  Scenario: Register User With Existing Email
+    Given user navigates to demo shop site
+    When  user clicks on register link
+    And   user fills out first name field
+    And   user fills out last name field
+    And   user enters existing email
+    And   user fills out Password field
+    And   user fills out confirm password field
+    And   user clicks on register
+    Then  user should get an error message: The specified email already exists

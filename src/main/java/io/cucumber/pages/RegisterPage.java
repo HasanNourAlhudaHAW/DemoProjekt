@@ -3,6 +3,7 @@ package io.cucumber.pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import qa.factory.DriverFactory;
 
 public class RegisterPage {
 
@@ -14,7 +15,7 @@ public class RegisterPage {
 
     public WebElement getRegisterLink()
     {
-        return driver.findElement(By.linkText("Register"));
+        return DriverFactory.getDriver().findElement(By.linkText("Register"));
     }
     public WebElement getFirstNameField(){
       return driver.findElement(By.id("FirstName"));
@@ -52,5 +53,9 @@ public class RegisterPage {
     public WebElement getErrorMessageWrongEmail()
     {
         return driver.findElement(By.xpath("//span[contains(text(), 'Wrong email')]"));
+    }
+
+    public WebElement checkErrorMessageEmailAlreadyExist(){
+        return driver.findElement(By.xpath("//li[contains(text(), 'The specified email already exists')]"));
     }
 }

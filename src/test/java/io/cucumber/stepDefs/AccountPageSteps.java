@@ -16,7 +16,7 @@ public class AccountPageSteps {
 
     private LoginPage loginPage = new LoginPage(DriverFactory.getDriver());
 
-    private AccountPage accountPage;
+    private AccountPage accountPage = new AccountPage(DriverFactory.getDriver());
 
     @Given("User has already logged in to Application")
     public void user_has_already_logged_in_to_application(DataTable dataTable) {
@@ -24,7 +24,9 @@ public class AccountPageSteps {
         String email =credList.get(0).get("email");
         String password =credList.get(0).get("password");
         DriverFactory.getDriver().get("https://demowebshop.tricentis.com/login");
-        accountPage = loginPage.doLogin(email, password);
+        loginPage.enterEmail().sendKeys(email);
+        loginPage.enterPassword().sendKeys(password);
+        loginPage.clickOnLogin().click();
     }
 
 
@@ -40,7 +42,7 @@ public class AccountPageSteps {
     }
     @Then("user should be logged out")
     public void user_should_be_logged_out() {
-       accountPage = loginPage.isLogInLinkVisible();
+       Assert.assertTrue(loginPage.getLoginLink().isDisplayed());
     }
 
 

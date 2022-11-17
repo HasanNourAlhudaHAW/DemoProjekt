@@ -25,7 +25,12 @@ Feature: Login Test
       | HasanNour8453@gmail.com | 123456   |
 
 
-
+  Scenario: Verify the above links exist
+    Given user navigates to demo shop site
+    And   register link is visible
+    And   log in link is visible
+    And   Shopping cart link is visible
+    And   wishlist link is visible
 
 
 
