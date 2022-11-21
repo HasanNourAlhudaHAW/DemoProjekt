@@ -25,7 +25,7 @@ public class AddProductsToShoppingCardSteps {
     @Then("the selected books will be added to shopping cart")
     public void the_selected_books_will_be_added_to_shopping_cart() {
        addProductsToShoppingCardPage.getShoppingCard().click();
-       List<WebElement> allProducts = addProductsToShoppingCardPage.checkBooksAdded();
+       List<WebElement> allProducts = addProductsToShoppingCardPage.getAddedBooksList();
         for (int i = 0; i < allProducts.size(); i++) {
             String productName = allProducts.get(i).getText();
             if (productName.equals("Computing and Internet") || productName.equals("Fiction")) {

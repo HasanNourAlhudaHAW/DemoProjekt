@@ -32,7 +32,7 @@ public class AddProductsToShoppingCardPage {
     {
         return driver.findElement(By.linkText("Shopping cart"));
     }
-    public List<WebElement> checkBooksAdded() {
+    public List<WebElement> getAddedBooksList() {
 
          List<WebElement> allProducts = driver.findElements(By.xpath("//td/a"));
          return allProducts;

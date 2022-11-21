@@ -1,6 +1,6 @@
 Feature: Add Products to Shopping Card
 
-  Scenario: Add Products To Shopping Card
+  Scenario: TC10: Add Products To Shopping Card
     Given user navigates to demo shop site
     When  user clicks on Books
     And   user adds book to cart

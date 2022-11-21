@@ -1,6 +1,6 @@
 Feature: Register Test
 
-  Scenario: Register User
+  Scenario: TC1: Register User
     Given user navigates to demo shop site
     When  user clicks on register link
     And   user fills out first name field
@@ -15,7 +15,7 @@ Feature: Register Test
 
 
 
-  Scenario: Register User With Invalid Email Format
+  Scenario: TC2: Register User With Invalid Email Format
     Given user navigates to demo shop site
     When  user clicks on register link
     And   user fills out first name field
@@ -25,7 +25,7 @@ Feature: Register Test
     Then  user should get an error message: Wrong email
 
 
-  Scenario: Register User With Existing Email
+  Scenario: TC3: Register User With Existing Email
     Given user navigates to demo shop site
     When  user clicks on register link
     And   user fills out first name field

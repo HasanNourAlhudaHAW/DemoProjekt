@@ -6,22 +6,12 @@ Feature: Account Feature
      |HasanNour8@gmail.com|123456|
 
 
-  Scenario: Log Out Functionality Test
+  Scenario: TC6: Log Out User
     Given user is on account page
     When  user hits the Log out button
     Then  user should be logged out
 
-
-
-  Scenario: Subscribe For Newsletters Functionality Test
-    Given user is on account page
-    When  user enters an email address in the Subscribe field
-    And   user hits the Subscribe button for newsletters
-    Then  user should be subscribed and get message Thank you for signing up!
-
-
-
-  Scenario: Make sure the above menu bar exists
+  Scenario: TC7: Verify menu bar
     Given user is on account page
     And "BOOKS" is visible
     And "COMPUTERS" is visible
@@ -33,7 +23,16 @@ Feature: Account Feature
 
 
 
-  Scenario: Adding Gift Card to WishList Functionality Test
+  Scenario: TC8: Subscribe User For Newsletters
+    Given user is on account page
+    When  user enters an email address in the Subscribe field
+    And   user hits the Subscribe button for newsletters
+    Then  user should be subscribed and get message Thank you for signing up!
+
+
+
+
+  Scenario: TC11 & TC12: Verify adding Gift Card to wishList and remove
     Given user is on account page
     When user moves to gift card on the bar
     And  user selects a gift card

@@ -1,6 +1,6 @@
 Feature: Search For a Product In The Search Field
 
-  Scenario: Search For A Product In Search Field And Buy It Functionality Test
+  Scenario: TC9: User Search For Product And Add It To Shopping Cart
     Given user navigates to demo shop site
     When  user moves to search field and types a products name
     And   user hits search button

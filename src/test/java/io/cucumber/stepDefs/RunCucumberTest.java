@@ -15,7 +15,7 @@ import static io.cucumber.junit.platform.engine.Constants.GLUE_PROPERTY_NAME;
 @SelectClasspathResource("io/cucumber/features")
 @ConfigurationParameter(key = PLUGIN_PROPERTY_NAME, value = "pretty")
 @ConfigurationParameter(key = GLUE_PROPERTY_NAME, value = "io/cucumber/stepDefs")
-
+@ConfigurationParameter(key = PLUGIN_PROPERTY_NAME, value = "html:target/report/report.html")
 public class RunCucumberTest {
 }
 
